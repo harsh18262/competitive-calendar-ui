@@ -13,22 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF01BBB1),
-      // appBar: AppBar(
-      //   shadowColor: Color(0xFF01BBB1),
-      //   backgroundColor: Color(0xFF01BBB1),
-      //   title: Padding(
-      //     padding: EdgeInsets.only(left: 150),
-      //     child: Text(
-      //       "Competitive Calendar",
-      //       style: GoogleFonts.dancingScript(
-      //         color: Colors.white,
-      //         fontSize: 45,
-      //         fontWeight: FontWeight.w400,
-      //       ),
-      //     ),
-      //   ),
-      // ),
+      backgroundColor: Color(0xFF00897B),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 25, horizontal: 50),
         child: SingleChildScrollView(

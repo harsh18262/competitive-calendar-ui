@@ -14,7 +14,7 @@ class _HeaderBarState extends State<HeaderBar> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 50),
       width: MediaQuery.of(context).size.width,
-      color: Color(0xFF01BBB1),
+      color: Color(0xFF00897B),
       height: 50,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,7 +33,7 @@ class _HeaderBarState extends State<HeaderBar> {
           HoverButton(
             onpressed: () {},
             minWidth: 150,
-            hoverColor: Color(0xFF3C394F),
+            hoverColor: Color(0xFF5D4037),
             hoverTextColor: Colors.lightBlueAccent[700],
             child: ReusableCard(text: 'Home'),
           ),
@@ -43,7 +43,7 @@ class _HeaderBarState extends State<HeaderBar> {
           HoverButton(
             onpressed: () {},
             minWidth: 175,
-            hoverColor: Color(0xFF3C394F),
+            hoverColor: Color(0xFF5D4037),
             hoverTextColor: Colors.lightBlueAccent[700],
             child: ReusableCard(text: 'About Us'),
           ),
@@ -53,7 +53,7 @@ class _HeaderBarState extends State<HeaderBar> {
           HoverButton(
             onpressed: () {},
             minWidth: 200,
-            hoverColor: Color(0xFF3C394F),
+            hoverColor: Color(0xFF5D4037),
             hoverTextColor: Colors.lightBlueAccent[700],
             child: ReusableCard(text: 'Contact Us'),
           ),
@@ -63,7 +63,7 @@ class _HeaderBarState extends State<HeaderBar> {
           HoverButton(
             onpressed: () {},
             minWidth: 225,
-            hoverColor: Color(0xFF3C394F),
+            hoverColor: Color(0xFF5D4037),
             hoverTextColor: Colors.lightBlueAccent[700],
             child: ReusableCard(text: 'Login/SignUp'),
           ),
