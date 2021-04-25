@@ -1,5 +1,7 @@
+import 'package:competitive_calender/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hovering/hovering.dart';
 
 class ReusableCard extends StatelessWidget {
   ReusableCard({required this.text});
@@ -14,10 +16,68 @@ class ReusableCard extends StatelessWidget {
       child: Text(
         text,
         style: GoogleFonts.mcLaren(
-          color: Colors.white,
+          color: Colors.blue[600],
           fontSize: 25,
           fontWeight: FontWeight.w400,
         ),
+      ),
+    );
+  }
+}
+
+class SignUpAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 50),
+      width: MediaQuery.of(context).size.width,
+      height: 60,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "Competitive Calendar",
+            style: GoogleFonts.dancingScript(
+              color: Colors.blue[600],
+              fontSize: 50,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          SizedBox(
+            width: 650,
+          ),
+          HoverButton(
+            onpressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
+            minWidth: 150,
+            hoverColor: Color(0XFFC5CAE9),
+            child: ReusableCard(text: 'Home'),
+          ),
+          SizedBox(
+            width: 75,
+          ),
+          HoverButton(
+            onpressed: () {},
+            minWidth: 175,
+            hoverColor: Color(0XFFC5CAE9),
+            child: ReusableCard(text: 'About Us'),
+          ),
+          SizedBox(
+            width: 50,
+          ),
+          HoverButton(
+            onpressed: () {},
+            minWidth: 200,
+            hoverColor: Color(0XFFC5CAE9),
+            child: ReusableCard(text: 'Contact Us'),
+          ),
+        ],
       ),
     );
   }

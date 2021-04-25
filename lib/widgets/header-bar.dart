@@ -1,4 +1,5 @@
 import 'package:competitive_calender/constants/reusable_card.dart';
+import 'package:competitive_calender/screens/signup_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hovering/hovering.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class _HeaderBarState extends State<HeaderBar> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 50),
       width: MediaQuery.of(context).size.width,
-      color: Color(0xFF00897B),
+      color: Colors.white,
       height: 50,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -22,7 +23,7 @@ class _HeaderBarState extends State<HeaderBar> {
           Text(
             "Competitive Calendar",
             style: GoogleFonts.dancingScript(
-              color: Colors.white,
+              color: Colors.blue[600],
               fontSize: 45,
               fontWeight: FontWeight.w400,
             ),
@@ -33,8 +34,7 @@ class _HeaderBarState extends State<HeaderBar> {
           HoverButton(
             onpressed: () {},
             minWidth: 150,
-            hoverColor: Color(0xFF5D4037),
-            hoverTextColor: Colors.lightBlueAccent[700],
+            hoverColor: Color(0XFFC5CAE9),
             child: ReusableCard(text: 'Home'),
           ),
           SizedBox(
@@ -43,8 +43,7 @@ class _HeaderBarState extends State<HeaderBar> {
           HoverButton(
             onpressed: () {},
             minWidth: 175,
-            hoverColor: Color(0xFF5D4037),
-            hoverTextColor: Colors.lightBlueAccent[700],
+            hoverColor: Color(0XFFC5CAE9),
             child: ReusableCard(text: 'About Us'),
           ),
           SizedBox(
@@ -53,18 +52,23 @@ class _HeaderBarState extends State<HeaderBar> {
           HoverButton(
             onpressed: () {},
             minWidth: 200,
-            hoverColor: Color(0xFF5D4037),
-            hoverTextColor: Colors.lightBlueAccent[700],
+            hoverColor: Color(0XFFC5CAE9),
             child: ReusableCard(text: 'Contact Us'),
           ),
           SizedBox(
             width: 75,
           ),
           HoverButton(
-            onpressed: () {},
+            onpressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SignupPage(),
+                ),
+              );
+            },
             minWidth: 225,
-            hoverColor: Color(0xFF5D4037),
-            hoverTextColor: Colors.lightBlueAccent[700],
+            hoverColor: Color(0XFFC5CAE9),
             child: ReusableCard(text: 'Login/SignUp'),
           ),
         ],
