@@ -1,6 +1,8 @@
+import 'package:competitive_calender/widgets/cp_info.dart';
 import 'package:competitive_calender/widgets/header-bar.dart';
 import 'package:competitive_calender/widgets/image-slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,6 +25,10 @@ class _HomePageState extends State<HomePage> {
                 height: 50,
               ),
               ImageSlider(),
+              SizedBox(
+                height: 100,
+              ),
+              CpInfo(),
             ],
           ),
         ),
