@@ -63,7 +63,7 @@ class _HeaderBarState extends State<HeaderBar> {
                   );
                 },
                 hoverColor: Color(0XFFC5CAE9),
-                minWidth: MediaQuery.of(context).size.width / 9,
+                minWidth: MediaQuery.of(context).size.width / 7,
                 child: ReusableCard(text: 'Login/SignUp'),
               ),
             ],

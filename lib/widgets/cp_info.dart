@@ -8,6 +8,7 @@ class CpInfo extends StatelessWidget {
     return Container(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image(
             image: AssetImage(
@@ -27,9 +28,10 @@ class CpInfo extends StatelessWidget {
                   "What is Competitive Programming??",
                   style: GoogleFonts.originalSurfer(
                     color: Colors.pink[100],
+                    fontSize: 35,
                     fontWeight: FontWeight.w500,
                   ),
-                  presetFontSizes: [40, 30, 15],
+                  minFontSize: 20,
                 ),
                 SizedBox(
                   height: 20,
@@ -38,9 +40,9 @@ class CpInfo extends StatelessWidget {
                   "Programming… Competitive Programming…",
                   style: GoogleFonts.indieFlower(
                     color: Colors.black,
+                    fontSize: 30,
                     fontWeight: FontWeight.w700,
                   ),
-                  presetFontSizes: [35, 20, 15],
                 ),
                 SizedBox(
                   height: 20,
@@ -49,10 +51,10 @@ class CpInfo extends StatelessWidget {
                   "It teaches you how to think?.",
                   style: GoogleFonts.permanentMarker(
                     color: Colors.black,
+                    fontSize: 30,
                     fontWeight: FontWeight.w700,
                     fontStyle: FontStyle.italic,
                   ),
-                  presetFontSizes: [30, 20, 15],
                 ),
                 SizedBox(
                   height: 20,
@@ -61,8 +63,8 @@ class CpInfo extends StatelessWidget {
                   "If you are a programmer you might have understood\nthe deep meaning of these lines quoted by Steve Jobs\nand you might have also experienced that even after\nshutting your computer you keep on thinking about\nprogramming stuff or code you have written in your\nproject.Once you enter in programming you just don’t\nlearn how to code but you also learn the “art of thinking”,\nby breaking your code into smaller chunks and then \nusing your logic-based creativity to solve a problem\nfrom different angles.",
                   style: GoogleFonts.architectsDaughter(
                     color: Colors.black,
+                    fontSize: 25,
                   ),
-                  presetFontSizes: [30, 15, 10],
                 )
               ],
             ),
