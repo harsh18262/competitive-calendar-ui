@@ -2,7 +2,6 @@ import 'package:competitive_calender/widgets/cp_info.dart';
 import 'package:competitive_calender/widgets/header-bar.dart';
 import 'package:competitive_calender/widgets/image-slider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,10 +14,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 25, horizontal: 50),
+        padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               HeaderBar(),
               SizedBox(
@@ -29,6 +29,9 @@ class _HomePageState extends State<HomePage> {
                 height: 100,
               ),
               CpInfo(),
+              SizedBox(
+                height: 100,
+              ),
             ],
           ),
         ),

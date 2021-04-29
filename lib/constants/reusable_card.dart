@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:competitive_calender/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,13 +14,13 @@ class ReusableCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
       ),
-      child: Text(
+      child: AutoSizeText(
         text,
         style: GoogleFonts.mcLaren(
           color: Colors.blue[600],
-          fontSize: 25,
           fontWeight: FontWeight.w400,
         ),
+        presetFontSizes: [25, 20, 15],
       ),
     );
   }
@@ -43,9 +44,6 @@ class SignUpAppBar extends StatelessWidget {
               fontWeight: FontWeight.w400,
             ),
           ),
-          SizedBox(
-            width: 650,
-          ),
           HoverButton(
             onpressed: () {
               Navigator.push(
@@ -55,21 +53,14 @@ class SignUpAppBar extends StatelessWidget {
                 ),
               );
             },
-            minWidth: 150,
             hoverColor: Color(0XFFC5CAE9),
             child: ReusableCard(text: 'Home'),
-          ),
-          SizedBox(
-            width: 75,
           ),
           HoverButton(
             onpressed: () {},
             minWidth: 175,
             hoverColor: Color(0XFFC5CAE9),
             child: ReusableCard(text: 'About Us'),
-          ),
-          SizedBox(
-            width: 50,
           ),
           HoverButton(
             onpressed: () {},
