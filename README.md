@@ -1,4 +1,4 @@
-# competitive_calender
+# competitive_calendar
 
 A new Flutter project.
 

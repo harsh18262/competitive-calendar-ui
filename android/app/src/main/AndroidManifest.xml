@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.competitive_calender">
+    package="com.example.competitive_calendar">
    <application
-        android:label="competitive_calender"
+        android:label="competitive_calendar"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

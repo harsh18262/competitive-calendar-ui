@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "354777401008",
+    "project_id": "competitvecalendar",
+    "storage_bucket": "competitvecalendar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354777401008:android:42449c59a00f0210095d75",
+        "android_client_info": {
+          "package_name": "com.example.competitive_calendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354777401008-ub75188t0qphpchhi1omgd46sot9ejpr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.competitive_calendar",
+            "certificate_hash": "0944f5c15474c1a5ffefe24ed97609c766037112"
+          }
+        },
+        {
+          "client_id": "354777401008-95g7hth5q24aopetkamorbvc1aatrt18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF97V3OGMKxPUKSBVi_Inlzm24boEnrvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354777401008-95g7hth5q24aopetkamorbvc1aatrt18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

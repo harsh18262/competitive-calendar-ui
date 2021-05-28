@@ -1,12 +1,11 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:competitive_calender/screens/home_page.dart';
+import 'package:competitive_calendar/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hovering/hovering.dart';
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({required this.text});
-  late final String text;
+  ReusableCard({@required this.text});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +13,13 @@ class ReusableCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
       ),
-      child: AutoSizeText(
+      child: Text(
         text,
         style: GoogleFonts.mcLaren(
           color: Colors.blue[600],
+          fontSize: 20,
           fontWeight: FontWeight.w400,
         ),
-        presetFontSizes: [25, 20, 15],
       ),
     );
   }
@@ -34,39 +33,48 @@ class SignUpAppBar extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 60,
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
             "Competitive Calendar",
             style: GoogleFonts.dancingScript(
               color: Colors.blue[600],
-              fontSize: 50,
-              fontWeight: FontWeight.w400,
+              fontSize: 40,
+              fontWeight: FontWeight.w700,
             ),
           ),
-          HoverButton(
-            onpressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePage(),
-                ),
-              );
-            },
-            hoverColor: Color(0XFFC5CAE9),
-            child: ReusableCard(text: 'Home'),
-          ),
-          HoverButton(
-            onpressed: () {},
-            minWidth: 175,
-            hoverColor: Color(0XFFC5CAE9),
-            child: ReusableCard(text: 'About Us'),
-          ),
-          HoverButton(
-            onpressed: () {},
-            minWidth: 200,
-            hoverColor: Color(0XFFC5CAE9),
-            child: ReusableCard(text: 'Contact Us'),
+          Spacer(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              HoverButton(
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
+                hoverColor: Color(0XFFC5CAE9),
+                minWidth: MediaQuery.of(context).size.width / 15,
+                child: ReusableCard(text: 'Home'),
+              ),
+              HoverButton(
+                onpressed: () {},
+                minWidth: MediaQuery.of(context).size.width / 12,
+                hoverColor: Color(0XFFC5CAE9),
+                child: ReusableCard(text: 'About Us'),
+              ),
+              HoverButton(
+                onpressed: () {},
+                minWidth: MediaQuery.of(context).size.width / 11,
+                hoverColor: Color(0XFFC5CAE9),
+                child: ReusableCard(text: 'Contact Us'),
+              ),
+            ],
           ),
         ],
       ),

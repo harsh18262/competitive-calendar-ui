@@ -1,4 +1,4 @@
-package com.example.competitive_calender
+package com.example.competitive_calendar
 
 import io.flutter.embedding.android.FlutterActivity
 

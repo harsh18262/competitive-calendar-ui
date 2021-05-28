@@ -1,6 +1,6 @@
 {
-    "name": "competitive_calender",
-    "short_name": "competitive_calender",
+    "name": "competitive_calendar",
+    "short_name": "competitive_calendar",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

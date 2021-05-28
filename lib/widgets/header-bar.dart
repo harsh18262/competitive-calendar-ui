@@ -1,9 +1,13 @@
-import 'package:competitive_calender/constants/reusable_card.dart';
-import 'package:competitive_calender/screens/signup_screen.dart';
+import 'package:competitive_calendar/constants/reusable_card.dart';
+import 'package:competitive_calendar/res/root.dart';
+import 'package:competitive_calendar/screens/about_us.dart';
+import 'package:competitive_calendar/screens/home_page.dart';
+
+import 'package:competitive_calendar/utils/email_auth.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hovering/hovering.dart';
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class HeaderBar extends StatefulWidget {
   @override
@@ -11,6 +15,20 @@ class HeaderBar extends StatefulWidget {
 }
 
 class _HeaderBarState extends State<HeaderBar> {
+  static const primarySwatch = Colors.green;
+  // button color
+  static const buttonColor = Colors.green;
+  // app name
+  static const appName = 'My App';
+  // boolean for showing home page if user unverified
+  static const homePageUnverified = false;
+
+  final params = {
+    'appName': appName,
+    'primarySwatch': primarySwatch,
+    'buttonColor': buttonColor,
+    'homePageUnverified': homePageUnverified,
+  };
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,16 +39,15 @@ class _HeaderBarState extends State<HeaderBar> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          AutoSizeText(
+          Text(
             "Competitive Calendar",
             style: GoogleFonts.dancingScript(
               color: Colors.blue[600],
               fontSize: 40,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w700,
             ),
-            minFontSize: 30,
-            overflow: TextOverflow.ellipsis,
           ),
+          Spacer(),
           Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -42,28 +59,158 @@ class _HeaderBarState extends State<HeaderBar> {
                 child: ReusableCard(text: 'Home'),
               ),
               HoverButton(
-                onpressed: () {},
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AboutUs(),
+                    ),
+                  );
+                },
                 hoverColor: Color(0XFFC5CAE9),
-                minWidth: MediaQuery.of(context).size.width / 11,
+                minWidth: MediaQuery.of(context).size.width / 12,
                 child: ReusableCard(text: 'About Us'),
-              ),
-              HoverButton(
-                onpressed: () {},
-                hoverColor: Color(0XFFC5CAE9),
-                minWidth: MediaQuery.of(context).size.width / 10,
-                child: ReusableCard(text: 'Contact Us'),
               ),
               HoverButton(
                 onpressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignupPage(),
+                      builder: (context) => new RootPage(
+                        params: params,
+                        auth: new Auth(),
+                      ),
                     ),
                   );
                 },
                 hoverColor: Color(0XFFC5CAE9),
-                minWidth: MediaQuery.of(context).size.width / 7,
+                minWidth: MediaQuery.of(context).size.width / 9,
+                child: ReusableCard(text: 'Login/SignUp'),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class SignUpPageAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      color: Colors.white,
+      height: 50,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(
+            "Competitive Calendar",
+            style: GoogleFonts.dancingScript(
+              color: Colors.blue[600],
+              fontSize: 40,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          Spacer(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              HoverButton(
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
+                hoverColor: Color(0XFFC5CAE9),
+                minWidth: MediaQuery.of(context).size.width / 15,
+                child: ReusableCard(text: 'Home'),
+              ),
+              HoverButton(
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AboutUs(),
+                    ),
+                  );
+                },
+                hoverColor: Color(0XFFC5CAE9),
+                minWidth: MediaQuery.of(context).size.width / 12,
+                child: ReusableCard(text: 'About Us'),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class AboutUsAppBar extends StatelessWidget {
+  const AboutUsAppBar({
+    Key key,
+    @required this.params,
+  }) : super(key: key);
+
+  final Map<String, Object> params;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      color: Colors.white,
+      height: 50,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(
+            "Competitive Calendar",
+            style: GoogleFonts.dancingScript(
+              color: Colors.blue[600],
+              fontSize: 40,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          Spacer(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              HoverButton(
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
+                hoverColor: Color(0XFFC5CAE9),
+                minWidth: MediaQuery.of(context).size.width / 15,
+                child: ReusableCard(text: 'Home'),
+              ),
+              HoverButton(
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => new RootPage(
+                        params: params,
+                        auth: new Auth(),
+                      ),
+                    ),
+                  );
+                },
+                hoverColor: Color(0XFFC5CAE9),
+                minWidth: MediaQuery.of(context).size.width / 9,
                 child: ReusableCard(text: 'Login/SignUp'),
               ),
             ],
