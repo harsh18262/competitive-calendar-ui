@@ -1,6 +1,7 @@
 import 'package:competitive_calendar/utils/email_auth.dart';
 
 import 'package:competitive_calendar/widgets/header-bar.dart';
+import 'package:competitive_calendar/widgets/image-slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -124,43 +125,26 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
             children: <Widget>[
               SignUpPageAppBar(),
               SizedBox(
+                height: 10,
+              ),
+              ImageSlider(),
+              SizedBox(
                 height: 50,
               ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ClipRRect(
-                    child: Container(
-                      width: MediaQuery.of(context).size.width / 2,
-                      height: 768,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("dsalgo.jpg"),
-                          fit: BoxFit.fill,
-                        ),
+              Container(
+                child: Column(
+                  children: [
+                    Text(
+                      "Welcome to the family of 24 Million Coders around the globe",
+                      style: GoogleFonts.lobster(
+                        color: Colors.pink[100],
+                        fontSize: 30,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 25,
-                  ),
-                  Container(
-                    child: Column(
-                      children: [
-                        Text(
-                          "Welcome to the family of 24 Million Coders around the globe",
-                          style: GoogleFonts.lobster(
-                            color: Colors.pink[100],
-                            fontSize: 30,
-                          ),
-                        ),
-                        _showBody(),
-                        _showCircularProgress(),
-                      ],
-                    ),
-                  ),
-                ],
+                    _showBody(),
+                    _showCircularProgress(),
+                  ],
+                ),
               )
             ],
           ),
@@ -288,6 +272,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
         keyboardType: TextInputType.emailAddress,
         autofocus: false,
         decoration: new InputDecoration(
+            focusColor: Colors.blue,
             hintText: 'Email',
             icon: new Icon(
               Icons.mail,
@@ -308,6 +293,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           obscureText: true,
           autofocus: false,
           decoration: new InputDecoration(
+              focusColor: Colors.blue,
               hintText: 'Password',
               icon: new Icon(
                 Icons.lock,
@@ -360,6 +346,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     // ignore: deprecated_member_use
     return Container(
       width: 150,
+
       // ignore: deprecated_member_use
       child: new FlatButton(
         child: _formMode == FormMode.LOGIN

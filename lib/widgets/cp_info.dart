@@ -14,7 +14,7 @@ class CpInfo extends StatelessWidget {
                       image: AssetImage(
                         "cp.png",
                       ),
-                      width: MediaQuery.of(context).size.width,
+                      width: MediaQuery.of(context).size.width / 2.45,
                       height: 600,
                     ),
                     SizedBox(
@@ -24,7 +24,7 @@ class CpInfo extends StatelessWidget {
                       "What is Competitive Programming??",
                       style: GoogleFonts.originalSurfer(
                         color: Colors.pink[100],
-                        fontSize: 40,
+                        fontSize: 30,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -35,7 +35,7 @@ class CpInfo extends StatelessWidget {
                       "Programming… Competitive Programming…",
                       style: GoogleFonts.indieFlower(
                         color: Colors.black,
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -46,7 +46,7 @@ class CpInfo extends StatelessWidget {
                       "It teaches you how to think?.",
                       style: GoogleFonts.permanentMarker(
                         color: Colors.black,
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w700,
                         fontStyle: FontStyle.italic,
                       ),
@@ -58,7 +58,7 @@ class CpInfo extends StatelessWidget {
                       "If you are a programmer you might have understood\nthe deep meaning of these lines quoted by Steve Jobs\nand you might have also experienced that even after\nshutting your computer you keep on thinking about\nprogramming stuff or code you have written in your\nproject.Once you enter in programming you just don’t\nlearn how to code but you also learn the “art of thinking”,\nby breaking your code into smaller chunks and then \nusing your logic-based creativity to solve a problem\nfrom different angles.",
                       style: GoogleFonts.architectsDaughter(
                         color: Colors.black,
-                        fontSize: 25,
+                        fontSize: 20,
                       ),
                     ),
                   ],
