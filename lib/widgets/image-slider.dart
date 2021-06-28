@@ -12,7 +12,7 @@ class ImageSlider extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             image: DecorationImage(
-              image: AssetImage("image-auto1.jpg"),
+              image: AssetImage("assets/image-auto1.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -22,7 +22,7 @@ class ImageSlider extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             image: DecorationImage(
-              image: AssetImage("image-auto2.jpg"),
+              image: AssetImage("assets/image-auto2.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -32,7 +32,7 @@ class ImageSlider extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             image: DecorationImage(
-              image: AssetImage("image-auto3.jpg"),
+              image: AssetImage("assets/image-auto3.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -42,7 +42,7 @@ class ImageSlider extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             image: DecorationImage(
-              image: AssetImage("image-auto4.jpg"),
+              image: AssetImage("assets/image-auto4.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -52,7 +52,7 @@ class ImageSlider extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             image: DecorationImage(
-              image: AssetImage("image-auto5.jpg"),
+              image: AssetImage("assets/image-auto5.jpg"),
               fit: BoxFit.cover,
             ),
           ),

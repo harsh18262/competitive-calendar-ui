@@ -12,7 +12,7 @@ class CpInfo extends StatelessWidget {
                   children: [
                     Image(
                       image: AssetImage(
-                        "cp.png",
+                        "assets/cp.png",
                       ),
                       width: MediaQuery.of(context).size.width / 2.45,
                       height: 600,
@@ -71,7 +71,7 @@ class CpInfo extends StatelessWidget {
                   children: [
                     Image(
                       image: AssetImage(
-                        "cp.png",
+                        "assets/cp.png",
                       ),
                       width: MediaQuery.of(context).size.width / 2,
                       height: 600,

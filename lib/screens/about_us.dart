@@ -53,7 +53,7 @@ class _AboutUsState extends State<AboutUs> {
                     ),
                     child: AboutUsSection(
                       name: "Shashwat Sharma",
-                      imageId: "me.jpeg",
+                      imageId: "assets/me.jpeg",
                       gitLink: "https://github.com/shashwat2910",
                       linkedinLink:
                           "https://www.linkedin.com/in/shashwat-sharma-79221218a/",
@@ -68,7 +68,7 @@ class _AboutUsState extends State<AboutUs> {
                     ),
                     child: AboutUsSection(
                       name: "Harshwardhan Mehrotra",
-                      imageId: "harsh.jpeg",
+                      imageId: "assets/harsh.jpeg",
                       gitLink: "https://github.com/harsh18262",
                       linkedinLink:
                           "https://www.linkedin.com/in/harshwardhan-mehrotra-84a5571a7/",
@@ -83,7 +83,7 @@ class _AboutUsState extends State<AboutUs> {
                     ),
                     child: AboutUsSection(
                       name: "Soham Dhande",
-                      imageId: "soham.jpeg",
+                      imageId: "assets/soham.jpeg",
                       gitLink: "https://github.com/stoic-sammy",
                       linkedinLink:
                           "https://www.linkedin.com/in/soham-dhande-b459bb1b0/",
@@ -98,7 +98,7 @@ class _AboutUsState extends State<AboutUs> {
                     ),
                     child: AboutUsSection(
                       name: "Shreyansh Dubey",
-                      imageId: "dubey.jpeg",
+                      imageId: "assets/dubey.jpeg",
                       gitLink: "https://github.com/strikerhacks",
                       linkedinLink:
                           "https://www.linkedin.com/in/shreyansh-dubey-8420331a8/",

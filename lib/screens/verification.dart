@@ -218,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage(
-                                      "codechef.png",
+                                      "assets/codechef.png",
                                     ),
                                   ),
                                 ),
@@ -245,7 +245,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Image(
                                     fit: BoxFit.cover,
                                     image: AssetImage(
-                                      "codeforces.jpg",
+                                      "assets/codeforces.jpg",
                                     ),
                                   ),
                                 ),
@@ -272,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Image(
                                     fit: BoxFit.cover,
                                     image: AssetImage(
-                                      "HackerRank.png",
+                                      "assets/HackerRank.png",
                                     ),
                                   ),
                                 ),
@@ -299,7 +299,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Image(
                                     fit: BoxFit.cover,
                                     image: AssetImage(
-                                      "hackerearth.png",
+                                      "assets/hackerearth.png",
                                     ),
                                   ),
                                 ),

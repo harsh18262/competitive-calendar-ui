@@ -7,7 +7,7 @@ class Contest {
   List<Article> articles = List<Article>();
 
   Future<void> getContestData() async {
-    final String url = "http://3.14.72.85/api/contests/";
+    final String url = "http://52.14.51.70/api/contests/";
     var respone = await http.get(Uri.parse(url));
     List jsonData = json.decode(respone.body);
 
@@ -26,7 +26,7 @@ class Contest {
   }
 
   Future<void> getContestDataCodechef() async {
-    final String url = "http://3.14.72.85/api/contests?platform=codechef";
+    final String url = "http://52.14.51.70/api/contests?platform=codechef";
     var response = await http.get(Uri.parse(url));
     List jsonData = json.decode(response.body);
     if (response.statusCode == 200) {
@@ -44,7 +44,7 @@ class Contest {
   }
 
   Future<void> getContestDataCodeForces() async {
-    final String url = "http://3.14.72.85/api/contests?platform=codeforces";
+    final String url = "http://52.14.51.70/api/contests?platform=codeforces";
     var response = await http.get(Uri.parse(url));
     List jsonData = json.decode(response.body);
     if (response.statusCode == 200) {
@@ -62,7 +62,7 @@ class Contest {
   }
 
   Future<void> getContestDataHackerRank() async {
-    final String url = "http://3.14.72.85/api/contests?platform=hackerrank";
+    final String url = "http://52.14.51.70/api/contests?platform=hackerrank";
     var response = await http.get(Uri.parse(url));
     List jsonData = json.decode(response.body);
     if (response.statusCode == 200) {
@@ -80,7 +80,7 @@ class Contest {
   }
 
   Future<void> getContestDataHackerEarth() async {
-    final String url = "http://3.14.72.85/api/contests?platform=hackerearth";
+    final String url = "http://52.14.51.70/api/contests?platform=hackerearth";
     var response = await http.get(Uri.parse(url));
     List jsonData = json.decode(response.body);
     if (response.statusCode == 200) {
@@ -98,7 +98,7 @@ class Contest {
   }
 
   Future<void> getContestDataPhaseRunning() async {
-    final String url = "http://3.14.72.85/api/contests?phase=running";
+    final String url = "http://52.14.51.70/api/contests?phase=running";
     var response = await http.get(Uri.parse(url));
     List jsonData = json.decode(response.body);
     if (response.statusCode == 200) {

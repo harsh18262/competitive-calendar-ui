@@ -67,7 +67,7 @@ class AboutUsSection extends StatelessWidget {
             GestureDetector(
               onTap: launchgitURL,
               child: SvgPicture.asset(
-                "github.svg",
+                "assets/github.svg",
                 width: 50,
                 height: 50,
               ),
@@ -75,7 +75,7 @@ class AboutUsSection extends StatelessWidget {
             GestureDetector(
               onTap: launchLinkedinURL,
               child: SvgPicture.asset(
-                "linkedin.svg",
+                "assets/linkedin.svg",
                 width: 50,
                 height: 50,
               ),
