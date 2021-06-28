@@ -84,13 +84,12 @@ class _HackerRankState extends State<HackerRank> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              color: Colors.grey.shade400),
+                              borderRadius: BorderRadius.circular(16)),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,
                               image: AssetImage(
-                                "assets/codeforces.jpg",
+                                "assets/codeforces.png",
                               ),
                             ),
                           ),
@@ -111,8 +110,7 @@ class _HackerRankState extends State<HackerRank> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              color: Colors.grey.shade400),
+                              borderRadius: BorderRadius.circular(16)),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,
@@ -138,8 +136,7 @@ class _HackerRankState extends State<HackerRank> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              color: Colors.grey.shade400),
+                              borderRadius: BorderRadius.circular(16)),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,

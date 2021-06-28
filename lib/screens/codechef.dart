@@ -58,7 +58,7 @@ class _CodeChefState extends State<CodeChef> {
                           width: 450,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
-                              color: Colors.brown.shade300),
+                              ),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.fill,
@@ -84,13 +84,13 @@ class _CodeChefState extends State<CodeChef> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              color: Colors.grey.shade400),
+                              borderRadius: BorderRadius.circular(16)
+                          ),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,
                               image: AssetImage(
-                                "assets/codeforces.jpg",
+                                "assets/codeforces.png",
                               ),
                             ),
                           ),
@@ -111,8 +111,8 @@ class _CodeChefState extends State<CodeChef> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              color: Colors.grey.shade400),
+                              borderRadius: BorderRadius.circular(16)
+                              ),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,
@@ -138,8 +138,8 @@ class _CodeChefState extends State<CodeChef> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              color: Colors.grey.shade400),
+                              borderRadius: BorderRadius.circular(16)
+                              ),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,
