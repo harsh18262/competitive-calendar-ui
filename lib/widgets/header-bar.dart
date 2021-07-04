@@ -39,12 +39,22 @@ class _HeaderBarState extends State<HeaderBar> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(
-            "Competitive Calendar",
-            style: GoogleFonts.dancingScript(
-              color: Colors.blue[600],
-              fontSize: 40,
-              fontWeight: FontWeight.w700,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
+            child: Text(
+              "Competitive Calendar",
+              style: GoogleFonts.dancingScript(
+                color: Colors.blue[600],
+                fontSize: 40,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
           Spacer(),
@@ -106,12 +116,22 @@ class SignUpPageAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(
-            "Competitive Calendar",
-            style: GoogleFonts.dancingScript(
-              color: Colors.blue[600],
-              fontSize: 40,
-              fontWeight: FontWeight.w700,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
+            child: Text(
+              "Competitive Calendar",
+              style: GoogleFonts.dancingScript(
+                color: Colors.blue[600],
+                fontSize: 40,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
           Spacer(),
@@ -171,12 +191,22 @@ class AboutUsAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(
-            "Competitive Calendar",
-            style: GoogleFonts.dancingScript(
-              color: Colors.blue[600],
-              fontSize: 40,
-              fontWeight: FontWeight.w700,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
+            child: Text(
+              "Competitive Calendar",
+              style: GoogleFonts.dancingScript(
+                color: Colors.blue[600],
+                fontSize: 40,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
           Spacer(),
