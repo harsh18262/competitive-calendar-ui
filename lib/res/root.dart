@@ -1,4 +1,4 @@
-import 'package:competitive_calendar/screens/verification.dart';
+import 'package:competitive_calendar/screens/data.dart';
 import 'package:competitive_calendar/screens/signup_screen.dart';
 import 'package:competitive_calendar/utils/email_auth.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +76,7 @@ class _RootPageState extends State<RootPage> {
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
-          return new HomePage(
+          return new DataTablePage(
             userId: _userId,
             auth: widget.auth,
             onSignedOut: _onSignedOut,

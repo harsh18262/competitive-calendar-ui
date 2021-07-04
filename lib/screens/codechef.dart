@@ -1,5 +1,6 @@
 import 'package:competitive_calendar/API/data.dart';
 import 'package:competitive_calendar/API/models.dart';
+import 'package:competitive_calendar/widgets/header-bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hovering/hovering.dart';
@@ -38,8 +39,10 @@ class _CodeChefState extends State<CodeChef> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
+          padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
           child: Column(
             children: [
+              PlatformAppBar(),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -57,8 +60,8 @@ class _CodeChefState extends State<CodeChef> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.fill,
@@ -84,8 +87,7 @@ class _CodeChefState extends State<CodeChef> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16)
-                          ),
+                              borderRadius: BorderRadius.circular(16)),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,
@@ -111,8 +113,7 @@ class _CodeChefState extends State<CodeChef> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16)
-                              ),
+                              borderRadius: BorderRadius.circular(16)),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,
@@ -138,8 +139,7 @@ class _CodeChefState extends State<CodeChef> {
                           height: 180,
                           width: 450,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16)
-                              ),
+                              borderRadius: BorderRadius.circular(16)),
                           child: ClipRRect(
                             child: Image(
                               fit: BoxFit.cover,

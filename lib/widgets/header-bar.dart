@@ -1,6 +1,7 @@
 import 'package:competitive_calendar/constants/reusable_card.dart';
 import 'package:competitive_calendar/res/root.dart';
 import 'package:competitive_calendar/screens/about_us.dart';
+import 'package:competitive_calendar/screens/data.dart';
 import 'package:competitive_calendar/screens/home_page.dart';
 
 import 'package:competitive_calendar/utils/email_auth.dart';
@@ -242,6 +243,61 @@ class AboutUsAppBar extends StatelessWidget {
                 hoverColor: Color(0XFFC5CAE9),
                 minWidth: MediaQuery.of(context).size.width / 9,
                 child: ReusableCard(text: 'Login/SignUp'),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class PlatformAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      color: Colors.white,
+      height: 50,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
+            child: Text(
+              "Competitive Calendar",
+              style: GoogleFonts.dancingScript(
+                color: Colors.blue[600],
+                fontSize: 40,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+          Spacer(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              HoverButton(
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DataTablePage(),
+                    ),
+                  );
+                },
+                hoverColor: Color(0XFFC5CAE9),
+                minWidth: MediaQuery.of(context).size.width / 12,
+                child: ReusableCard(text: 'All'),
               ),
             ],
           )

@@ -14,8 +14,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'codechef.dart';
 import 'codeforce.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage(
+class DataTablePage extends StatefulWidget {
+  DataTablePage(
       {Key key,
       this.params,
       this.auth,
@@ -30,10 +30,10 @@ class HomePage extends StatefulWidget {
   final String userId;
 
   @override
-  State<StatefulWidget> createState() => new _HomePageState();
+  State<StatefulWidget> createState() => new _DataTablePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DataTablePageState extends State<DataTablePage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Contest contest = Contest();
   // ignore: deprecated_member_use
@@ -212,8 +212,7 @@ class _HomePageState extends State<HomePage> {
                                 height: 180,
                                 width: 450,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16)
-                                    ),
+                                    borderRadius: BorderRadius.circular(16)),
                                 child: ClipRRect(
                                   child: Image(
                                     fit: BoxFit.fill,
