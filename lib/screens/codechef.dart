@@ -1,29 +1,27 @@
-import 'package:competitive_calendar/API/data.dart';
-import 'package:competitive_calendar/API/models.dart';
-import 'package:competitive_calendar/widgets/header-bar.dart';
+import 'package:competitive_calendar/helper/api.dart';
+import 'package:competitive_calendar/helper/model.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:hovering/hovering.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-import 'codeforce.dart';
-import 'hackerearth.dart';
-import 'hackerrank.dart';
+class CodeChefData extends StatefulWidget {
+  const CodeChefData({Key? key}) : super(key: key);
 
-class CodeChef extends StatefulWidget {
   @override
-  _CodeChefState createState() => _CodeChefState();
+  _CodeChefDataState createState() => _CodeChefDataState();
 }
 
-class _CodeChefState extends State<CodeChef> {
+class _CodeChefDataState extends State<CodeChefData> {
+  List<Article> articles = [];
   Contest contest = Contest();
-  // ignore: deprecated_member_use
-  List<Article> articles = List<Article>();
+  bool isloading = false;
   getandSetData() async {
     await contest.getContestDataCodechef();
     articles = contest.articles;
-    setState(() {});
+    setState(() {
+      isloading = true;
+    });
   }
 
   @override
@@ -35,318 +33,190 @@ class _CodeChefState extends State<CodeChef> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+        body: Container(
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+      child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
-          child: Column(
-            children: [
-              PlatformAppBar(),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    GestureDetector(
-                      onTap: () => {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => CodeChef()))
-                      },
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 50, vertical: 25),
-                        child: Container(
-                          height: 180,
-                          width: 450,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: ClipRRect(
-                            child: Image(
-                              fit: BoxFit.fill,
-                              image: AssetImage(
-                                "assets/codechef.png",
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            isloading == true
+                ? ListView.builder(
+                    physics: ClampingScrollPhysics(),
+                    itemCount: articles.length,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return ContestTile(
+                        name: articles[index].name,
+                        url: articles[index].url,
+                        platform: articles[index].platform,
+                        phase: articles[index].phase,
+                        startdate: articles[index].startdate,
+                        enddate: articles[index].enddate,
+                      );
+                    },
+                  )
+                : Center(
+                    child: CircularProgressIndicator(
+                      color: Colors.blue,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CodeForce()));
-                      },
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 50, vertical: 25),
-                        child: Container(
-                          height: 180,
-                          width: 450,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16)),
-                          child: ClipRRect(
-                            child: Image(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
-                                "assets/codeforces.png",
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HackerRank()));
-                      },
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 50, vertical: 25),
-                        child: Container(
-                          height: 180,
-                          width: 450,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16)),
-                          child: ClipRRect(
-                            child: Image(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
-                                "assets/HackerRank.png",
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HackerEarth()));
-                      },
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 50, vertical: 25),
-                        child: Container(
-                          height: 180,
-                          width: 450,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16)),
-                          child: ClipRRect(
-                            child: Image(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
-                                "assets/hackerearth.png",
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 450,
-                    child: Text(
-                      "Contest Name",
-                      style: GoogleFonts.mcLaren(),
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      "Platform",
-                      style: GoogleFonts.mcLaren(),
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      "Phase",
-                      style: GoogleFonts.mcLaren(),
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      "Start Date",
-                      style: GoogleFonts.mcLaren(),
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      "Start Time",
-                      style: GoogleFonts.mcLaren(),
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      "End Time",
-                      style: GoogleFonts.mcLaren(),
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      "End Date",
-                      style: GoogleFonts.mcLaren(),
-                    ),
-                  ),
-                ],
-              ),
-              ListView.builder(
-                physics: ClampingScrollPhysics(),
-                itemCount: articles.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return ContestTileWeb(
-                    name: articles[index].name,
-                    url: articles[index].url,
-                    platform: articles[index].platform,
-                    phase: articles[index].phase,
-                    startdate: articles[index].startdate,
-                    enddate: articles[index].enddate,
-                  );
-                },
-              ),
-            ],
-          ),
+                  )
+          ],
         ),
       ),
-    );
+    ));
   }
 }
 
-// ignore: must_be_immutable
-class ContestTileWeb extends StatelessWidget {
+class ContestTile extends StatelessWidget {
   String name, phase, platform, url;
   DateTime startdate, enddate;
-  ContestTileWeb(
-      {this.name,
-      this.phase,
-      this.platform,
-      this.url,
-      this.startdate,
-      this.enddate});
+  ContestTile(
+      {required this.name,
+      required this.phase,
+      required this.platform,
+      required this.url,
+      required this.startdate,
+      required this.enddate});
+  Color getColor() {
+    if (phase == "Running") {
+      return Colors.lightGreen.shade300;
+    } else if (phase == "Ended") {
+      return Colors.red.shade300;
+    } else if (phase == "Upcoming") {
+      return Colors.yellow.shade300;
+    }
+    return Colors.blueGrey.shade400;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Container(
-            width: 450,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 25,
-                ),
-                HoverButton(
-                  onpressed: () {
-                    launch(url);
-                  },
-                  textColor: Colors.blue[400],
-                  child: Text(
-                    name,
-                    style: TextStyle(),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          padding: EdgeInsets.symmetric(vertical: 20),
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  final RenderObject? box = context.findRenderObject();
+                  Share.share(
+                      "Contest Name : $name \nPhase : $phase \nUrl: $url \nPlatfrom: $platform \nFrom ${DateFormat('dd-MMM-yyyy').format(startdate.toLocal())} to ${DateFormat('dd-MMM-yyyy').format(enddate.toLocal())} \nTimings :- ${DateFormat('KK:mm:a').format(startdate.toLocal())} to ${DateFormat('KK:mm:a').format(enddate.toLocal())}");
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Icon(Icons.share),
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 25,
+              ),
+              Text(name),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Phase :-'),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(phase),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Platform :-'),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(platform),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Start Date :-'),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    DateFormat('dd-MMM-yyyy').format(startdate.toLocal()),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('from'),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    DateFormat('KK:mm:a').format(startdate.toLocal()),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text('to'),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    DateFormat('KK:mm:a').format(enddate.toLocal()),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('End Date :-'),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    DateFormat('dd-MMM-yyyy').format(enddate.toLocal()),
+                  ),
+                ],
+              ),
+              GestureDetector(
+                onTap: () {
+                  launch(url);
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Icon(Icons.link),
+                    ],
+                  ),
                 ),
-              ],
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              SizedBox(
-                height: 25,
-              ),
-              Text(platform),
-              SizedBox(
-                height: 25,
               ),
             ],
           ),
-          Column(
-            children: [
-              SizedBox(
-                height: 25,
-              ),
-              Text(phase),
-              SizedBox(
-                height: 25,
-              ),
-            ],
+          decoration: BoxDecoration(
+            color: getColor(),
+            borderRadius: BorderRadius.circular(8),
           ),
-          Column(
-            children: [
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                DateFormat('dd-MMM-yyyy').format(startdate.toLocal()),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                DateFormat('KK:mm:a').format(startdate.toLocal()),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                DateFormat('KK:mm:a').format(enddate.toLocal()),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                DateFormat('dd-MMM-yyyy').format(enddate.toLocal()),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-            ],
-          ),
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 25,
+        ),
+      ],
     );
   }
 }

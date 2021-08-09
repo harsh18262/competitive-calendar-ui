@@ -5,19 +5,19 @@ import 'package:share_plus/share_plus.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HackerEarth extends StatefulWidget {
-  const HackerEarth({Key? key}) : super(key: key);
+class UpcomingPhaseData extends StatefulWidget {
+  const UpcomingPhaseData({Key? key}) : super(key: key);
 
   @override
-  _HackerEarthState createState() => _HackerEarthState();
+  _UpcomingPhaseDataState createState() => _UpcomingPhaseDataState();
 }
 
-class _HackerEarthState extends State<HackerEarth> {
+class _UpcomingPhaseDataState extends State<UpcomingPhaseData> {
   List<Article> articles = [];
   Contest contest = Contest();
   bool isloading = false;
   getandSetData() async {
-    await contest.getContestDataHackerEarth();
+    await contest.getContestDataPhaseUpcoming();
     articles = contest.articles;
     setState(() {
       isloading = true;
