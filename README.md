@@ -1,16 +1,11 @@
 # competitive_calendar
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![alt text](https://github.com/harsh18262/competitive-calendar-ui/blob/main/images/Image%201.jpeg)
+<br>
+![alt text](https://github.com/harsh18262/competitive-calendar-ui/blob/main/images/Image%202.jpeg)
+<br>
+![alt text](https://github.com/harsh18262/competitive-calendar-ui/blob/main/images/Image%203.jpeg)
+<br>
+![alt text](https://github.com/harsh18262/competitive-calendar-ui/blob/main/images/Image%204.jpeg)
+<br>
+![alt text](https://github.com/harsh18262/competitive-calendar-ui/blob/main/images/Image%205.jpeg)
